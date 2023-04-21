@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Task 2</title>
+</head>
+
+<body>
+    <!-- 2 Text boxes -->
+    <input type="number" id="number1"> <br><br>
+    <input type="number" id="number2">
+
+    <br><br>
+    <!-- Buttons starts here -->
+    <button onclick="calculate('+')">+</button>
+    <button onclick="calculate('-')">-</button>
+    <button onclick="calculate('*')">*</button>
+    <button onclick="calculate('/')">/</button>
+    <br><br>
+
+    <!-- Result should be displayed here -->
+    <span>Result = </span><span id="result"></span>
+
+    <!-- script starts here -->
+    <script>
+        //function to calculate and it will have one parameter named operator (which will be + or - or * or /)
+        function calculate(operator){
+            //get number 1 from inputbox 1 and store in varaible num1
+            //we need to pasrse the value using parseFloat or parseInt, otherwise it will take it as string
+            var num1 = parseFloat(document.getElementById("number1").value);
+            //get number 2 from inputbox 2 and store in varaible num2
+            var num2 = parseFloat(document.getElementById("number2").value);
+            //Create a variable to store result
+            var result;
+            
+            //We use switch case statment for calculatuons based on operator passed
+            switch(operator){
+                case "+":
+                    result = num1 + num2;
+                    break;
+                case "-":
+                    result = num1 - num2;
+                    break;
+                case "*":
+                    result = num1 * num2;
+                    break;
+                case "/":
+                    result = num1 / num2;
+                    break;
+            }
+
+            //we will craete on span tag and we will traget it and display result value in that span tag using the ID=result
+            document.getElementById("result").innerHTML = result;            
+        }
+    </script>
+</body>
+
+</html>
