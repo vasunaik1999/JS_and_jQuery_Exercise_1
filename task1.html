@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Task 1</title>
+</head>
+<body>
+    <!-- h2 tag -->
+    <h2 id="hello">Hello</h2>
+
+    <input type="text" id="input-text">
+
+    <button onclick="changeText()">Submit</button>
+
+    <!-- javascript starts here -->
+    <script>
+        //function change text
+        function changeText() {
+            //create one variable and target the input field by using its ID and get its value & store this value in this variable
+            var inputText = document.getElementById("input-text").value;
+            //So now target the h2 tag using ID and set its value to inputText
+            document.getElementById("hello").innerHTML = inputText;
+        }
+    </script>
+</body>
+</html>
