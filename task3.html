@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Task 3</title>
+</head>
+
+<body>
+    <button onclick="addrow()">Next</button>
+
+    <!-- <ul id="mytable">
+        <li id="0">1</li>
+        <li id="1">1</li>
+    </ul> -->
+    <br><br>
+
+    <table id="mytable" border="1">
+        <tr>
+            <td id="0">1</td>
+        </tr>
+        <tr>
+            <td id="1">1</td>
+        </tr>
+        <tr>
+            <td id="2">2</td>
+        </tr>
+    </table>
+
+    <!-- javascript starts here -->
+    <script>
+        function addrow() {
+            //target the table using ID=mytable and store it inside table varaible 
+            var table = document.getElementById("mytable");
+            
+            //we find the IDs of last row and second last row
+            //last row can be found out using length of the table (since ID strats with 0, we subract 1 from the total length of the table)
+            var lastRow = table.rows.length - 1; //we store ID of lastRow in this varaible
+            var secondLastRow = lastRow - 1; //we store ID of secondLastRow in this varaible
+            
+            var newRow = table.insertRow(lastRow + 1); //We create new row (i.e. <tr></tr>) & we store ID of newRow in this varaible
+
+            //We store the value of the last row in this varaible using InnerHTML property
+            var lastValue = parseInt(document.getElementById(lastRow).innerHTML);
+            //We store the value of the second last row in this varaible using InnerHTML property
+            var secondLastValue = parseInt(document.getElementById(secondLastRow).innerHTML);
+            //We add last row value and second last row value and than store it in newValue varaible
+            var newValue = lastValue + secondLastValue;
+
+            //We create a new cell(<td></td>) inside the newRow which we created above.
+            var newCell = newRow.insertCell(0);
+            //Now we set the vlaue of newCell to the sum/newValue using innerHTML property
+            newCell.innerHTML = newValue;
+            //Lastly we assign the ID to the new cell we created just now, using newCell.id, and ID will be lastRow's ID + 1;
+            newCell.id = lastRow + 1;
+        }
+    </script>
+</body>
+
+</html>
