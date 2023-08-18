@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Task 7</title>
+</head>
+
+<body>
+    <div id="myDiv" style="background:#2E9AFE; height:80px; width:200px; margin:6px;">My Effect is FadeIn and FadeOut
+    </div>
+    <button id="btn2">Fade In (3 Second)</button>
+    <button id="btn1">Fade Out (3 Second)</button>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // hide the div on page load
+            $("#myDiv").hide();
+
+            // add event listener for the "Fade In" button
+            $("#btn2").click(function () {
+                // fade in the div over 3 seconds
+                $("#myDiv").fadeIn(3000);
+            });
+
+            // add event listener for the "Fade Out" button
+            $("#btn1").click(function () {
+                // fade out the div over 3 seconds
+                $("#myDiv").fadeOut(3000);
+            });
+        });
+    </script>
+</body>
+
+</html>

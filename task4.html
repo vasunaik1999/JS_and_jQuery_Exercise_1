@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="makePage();">Click Here</button>
+    
+    <h1>I am an H1</h1>
+
+    <p>This is a paragraph followed by a list</p>
+
+    <ol  type="I" id="myList">
+        <li>This is first</li>
+        <li>This is second</li>
+    </ol>
+
+    <script>
+        function makePage(){
+            var listItemNum = document.getElementById("myList").childElementCount + 1;
+            var numInWords = getNumberInWords(listItemNum);
+
+            var newItem = document.createElement("li");
+            var textNode = document.createTextNode("This is " + numInWords);
+            newItem.appendChild(textNode);
+
+            var list = document.getElementById("myList");
+            list.appendChild(newItem);
+        }
+
+        function getNumberInWords(num) {
+            var ones = ["", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
+            var tens = ["", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
+            var special = ["ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
+
+            if (num >= 1 && num <= 9) {
+                return ones[num];
+            } else if (num >= 10 && num <= 19) {
+                return special[num - 10];
+            } else if (num >= 20 && num <= 99) {
+                var tensDigit = Math.floor(num / 10);
+                var onesDigit = num % 10;
+                var result = tens[tensDigit];
+                if (onesDigit > 0) {
+                    result += "-" + ones[onesDigit];
+                }
+                return result;
+            } else {
+                return "";
+            }
+        }
+    </script>
+</body>
+</html>

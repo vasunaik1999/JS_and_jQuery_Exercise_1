@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Task 10</title>
+</head>
+
+<body>
+    <input type="text" id="textBox">
+    <button id="displayBtn">Display Text</button>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#displayBtn").click(function () {
+                var text = $("#textBox").val();
+                $("#displayBtn").html(text);
+            });
+        });
+    </script>
+</body>
+
+</html>

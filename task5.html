@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My List Page</title>
+    <style>
+        body {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid grey;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .deleteBtn {
+            background-color: red;
+            color: aliceblue;
+            padding: 10px 40px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .th-title {
+            width: 50%;
+        }
+
+        .th-rating {
+            width: 30%;
+        }
+
+        .th-action {
+            width: 20%;
+        }
+
+        td {
+            text-align: center;
+        }
+
+        #title,
+        #rating {
+            width: 20%;
+            margin: 5px;
+            padding: 4px;
+        }
+
+        .addMovieBtn {
+            padding: 4px;
+        }
+
+        tbody tr:nth-child(odd) {
+
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>My Favorite Movies</h1>
+
+    <form id="myForm">
+        <label for="title"><strong>Title:</strong></label>
+        <input type="text" id="title" name="title" placeholder="Movie Title">
+        <label for="rating"><strong>Rating:</strong></label>
+        <input type="number" id="rating" name="rating" min="1" max="10" placeholder="Rate the movie from 1 to 10">
+        <button type="button" class="addMovieBtn" onclick="addTitle()">Add Movie</button>
+    </form>
+
+    <table id="myTable">
+        <thead>
+            <tr>
+                <th class="th-title">Title</th>
+                <th class="th-rating">Rating</th>
+                <th class="th-action">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <script src="task5.js"></script>
+
+</body>
+
+</html>

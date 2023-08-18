@@ -1,25 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <title>Task 1</title>
+	<title>Animation Example</title>
+	<style>
+		div {
+			
+		}
+	</style>
 </head>
 <body>
-    <!-- h2 tag -->
-    <h2 id="hello">Hello</h2>
 
-    <input type="text" id="input-text">
+	<button id="startButton">Start Animation</button>
 
-    <button onclick="changeText()">Submit</button>
+	<div id="animateDiv" style="background: #98bf21; height: 100px; width: 200px; position: absolute;">HELLO</div>
 
-    <!-- javascript starts here -->
-    <script>
-        //function change text
-        function changeText() {
-            //create one variable and target the input field by using its ID and get its value & store this value in this variable
-            var inputText = document.getElementById("input-text").value;
-            //So now target the h2 tag using ID and set its value to inputText
-            document.getElementById("hello").innerHTML = inputText;
-        }
-    </script>
+	<script>
+		const animateDiv = document.getElementById("animateDiv");
+		const startButton = document.getElementById("startButton");
+
+		startButton.addEventListener("click", () => {
+			animateDiv.style.transform = "translateX(200px)"; // Move the div to the right by changing its transform property
+			animateDiv.style.fontSize = "40px"; // Increase the font size of the text
+		});
+	</script>
+
 </body>
 </html>

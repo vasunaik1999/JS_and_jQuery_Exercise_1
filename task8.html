@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Toggle fading in and out boxes</title>
+    <style>
+        div {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>fadeToggle() with different speed parameters.</p>
+    <button>Click to fade in/out boxes</button><br><br>
+    <div id="div1" style="width:100px;height:100px;background-color:#6D5050;"></div><br>
+    <div id="div2" style="width:100px;height:100px;background-color:#42D5A9;"></div><br>
+    <div id="div3" style="width:100px;height:100px;background-color:#8942D5;"></div><br>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $("#div1").fadeToggle(1000);
+                $("#div2").fadeToggle(2000);
+                $("#div3").fadeToggle(3000);
+            });
+        });
+    </script>
+</body>
+
+</html>
